@@ -19,4 +19,11 @@ class UserService
         return $user;
     }
 
+    public function byEmail(array $data) : User | null
+    {
+        $user = User::where('email', $data['email'])->first();
+
+        return $user;
+    }
+
 }
