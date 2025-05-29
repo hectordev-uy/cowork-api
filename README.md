@@ -37,6 +37,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 5. Install the dependencies
 ```bash 
     composer install
+    exit
 ```	
 
 6. Create the environment file
@@ -44,7 +45,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     cp .env.example .env
 ```	
 
-7. Configure the database environment
+7. Configure the database environment file
 ```bash 
     DB_CONNECTION=mariadb
     DB_HOST=mariadb
@@ -56,5 +57,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 8. Create the database
 ```bash 
+    docker exec -it laravel_app bash
     php artisan migrate --seed
 ```	
