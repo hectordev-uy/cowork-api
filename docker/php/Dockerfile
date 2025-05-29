@@ -26,7 +26,7 @@ WORKDIR /var/www
 COPY . .
 
 # Establecer permisos para Laravel
-RUN chown -R www-data:www-data /var/www
+RUN chown -R $USER:$USER /var/www
 
 # Exponer puerto (opcional, PHP-FPM usa 9000 internamente)
 EXPOSE 9000
