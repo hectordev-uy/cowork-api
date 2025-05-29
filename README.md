@@ -16,7 +16,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 1. Clone the repository
 ```bash 
-    git clone https://github.com/hectordevuy/cowork-api.git
+    git clone https://github.com/hectordev-uy/cowork-api.git
 ```     
 
 2. Go to the project folder 
@@ -26,20 +26,35 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 3. Run the docker-compose
 ```bash 
-    docker-compose up -d --build
-```
+    docker compose up -d --build
+```	
 
-4. Access to the docker container   
+4. Go to the docker container
 ```bash 
     docker exec -it laravel_app bash
-```
+```	
 
 5. Install the dependencies
 ```bash 
     composer install
+```	
+
+6. Create the environment file
+```bash 
+    cp .env.example .env
+```	
+
+7. Configure the database environment
+```bash 
+    DB_CONNECTION=mariadb
+    DB_HOST=mariadb
+    DB_PORT=3306
+    DB_DATABASE=laravel
+    DB_USERNAME=laravel_user
+    DB_PASSWORD=secret
 ```
 
-6. Create the database
+8. Create the database
 ```bash 
     php artisan migrate --seed
-```
+```	
