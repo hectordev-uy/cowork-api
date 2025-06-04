@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\ReservController;
 
 
 Route::group(['prefix' => 'v1'], function () {
@@ -11,5 +12,8 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::middleware('auth:sanctum')->group(function () {
         Route::post('/logout', [LoginController::class, 'logout']);
+
+        Route::post('/reserv', [ReservController::class, 'store']);
+        Route::put('/reserv/{id}', [ReservController::class, 'update']);
     });
 });
